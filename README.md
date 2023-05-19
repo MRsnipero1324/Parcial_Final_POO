@@ -80,4 +80,4 @@ Atributos:
 Métodos:
 - `calcular_toneladas_vidrio_en_dia(dia)`: Calcula la cantidad total de toneladas de vidrio recogidas en un día específico en todas las recolecciones.
 
-¡Esto concluye la descripción y uso de la aplicación TrashCity!
+Esto concluye la descripción TrashCity
