@@ -6,7 +6,7 @@ TrashCity es una aplicación de gestión de recolección de residuos que permite
 
 # ¿Como funciona?
 Es importante tener en cuenta que el código está hecho para que funcione en Google Colab, por lo que, si se desea usar otros IDE como Visual Studio Code, se deben instalar las respectivas extensiones para su correcto funcionamiento.
-Tambien se busca mostrar lo aprendido en a lo largo del curso de Programacion orientada a objetos. Entonces, esta tiene su version base y su version aplicando los patrones de diseños.
+Tambien se busca mostrar lo aprendido en a lo largo del curso de Programacion orientada a objetos. Entonces, esta tiene su version base y su version aplicando los patrones de diseños asi como sus respectivos diagramas de UML.
 
 ## Clases
 
@@ -84,4 +84,77 @@ Atributos:
 Métodos:
 - `calcular_toneladas_vidrio_en_dia(dia)`: Calcula la cantidad total de toneladas de vidrio recogidas en un día específico en todas las recolecciones.
 
-Esto concluye la descripción TrashCity
+## TrashCityBuilder
+
+La clase `TrashCityBuilder` es una clase auxiliar que implementa el patrón de diseño Builder para simplificar la construcción de la instancia de `TrashCity`. Proporciona métodos para agregar recolecciones a la instancia de `TrashCity` de manera gradual y luego construir y obtener la instancia completa.
+
+### Atributos
+
+- `recolecciones`: Lista de objetos `Recoleccion` que representa las recolecciones a agregar a la instancia de `TrashCity`.
+
+### Métodos
+
+- `agregar_recoleccion(recoleccion: Recoleccion)`: Agrega una instancia de `Recoleccion` a la lista de recolecciones.
+- `construir() -> TrashCity`: Construye y devuelve la instancia completa de `TrashCity` con las recolecciones agregadas.
+
+#### Uso
+
+```python
+# Crear una instancia de TrashCityBuilder
+builder = TrashCityBuilder()
+
+# Agregar recolecciones
+builder.agregar_recoleccion(recoleccion1)
+builder.agregar_recoleccion(recoleccion2)
+
+# Construir la instancia completa de TrashCity
+trashcity = builder.construir()
+```
+
+En este ejemplo, se crea una instancia de `TrashCityBuilder` y se agregan dos instancias de `Recoleccion` utilizando el método `agregar_recoleccion()`. Luego, se llama al método `construir()` para obtener la instancia completa de `TrashCity` en la variable `trashcity`.
+
+El uso del `TrashCityBuilder` simplifica y estructura el proceso de construcción de la instancia de `TrashCity`, permitiendo un código más legible y modular. Además, proporciona flexibilidad para agregar más pasos o lógica de construcción si es necesario en el futuro.
+
+## Uso de la aplicación
+
+La aplicación TrashCity se utiliza para gestionar y realizar el seguimiento de las recolecciones de residuos en una ciudad. Permite calcular la cantidad de toneladas de vidrio recogidas en un día específico. A continuación se muestra un ejemplo de cómo utilizar la aplicación:
+
+```python
+# Importar las clases necesarias
+from datetime import datetime
+from trashcity import PuntoGeografico, Persona, Camion, Carga, Ruta, Recoleccion, TrashCity
+
+# Crear objetos de PuntoGeografico
+punto1 = PuntoGeografico(10.123456, -75.456789)
+punto2 = PuntoGeografico(10.234567, -75.567890)
+punto3 = PuntoGeografico(10.345678, -75.678901)
+
+# Crear objeto de Ruta
+ruta1 = Ruta(1, "Ruta 1", [punto1, punto2, punto3])
+
+# Crear objeto de Persona
+persona1 = Persona(1, "Juan", "Guzman", "1193548728")
+
+# Crear objeto de Camion
+camion1 = Camion(1, persona1, 2)
+
+# Crear objeto de Carga
+carga1 = Carga(2.5, 1.5, 3.0, 1.0, 2.0)
+
+# Crear objeto de Recoleccion
+recoleccion1 = Recoleccion(1, datetime(2023, 4, 1, 8, 0), datetime(2023, 4, 1, 12, 0), ruta1, camion1, 2, [punto1, punto2], carga1)
+
+# Crear objeto de TrashCity
+trashcity = TrashCity([recoleccion1])
+
+# Calcular la cantidad de toneladas de vidrio recogidas en un día específico
+dia = datetime(2023, 4, 1).date()
+toneladas_vidrio = trashcity.calcular_toneladas_vidrio_en_dia(dia)
+
+# Imprimir el resultado
+print(f"En el día: {dia}, se recogieron: {toneladas_vidrio} toneladas de vidrio.")
+```
+
+En el ejemplo anterior, se crean objetos de diferentes clases para representar los puntos geográficos, personas, camiones, cargas, rutas, recolecciones y la ciudad de recolección de residuos. Luego, se utiliza el método `calcular_toneladas_vidrio_en_dia()` para calcular la cantidad de toneladas de vidrio recogidas en un día específico. El resultado se imprime en la consola.
+
+Esto concluye la descripción y uso de la aplicación TrashCity
