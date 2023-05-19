@@ -6,6 +6,7 @@ TrashCity es una aplicación de gestión de recolección de residuos que permite
 
 # ¿Como funciona?
 Es importante tener en cuenta que el código está hecho para que funcione en Google Colab, por lo que, si se desea usar otros IDE como Visual Studio Code, se deben instalar las respectivas extensiones para su correcto funcionamiento.
+Tambien se busca mostrar lo aprendido en a lo largo del curso de Programacion orientada a objetos. Entonces, esta tiene su version base y su version aplicando los patrones de diseños.
 
 ## Clases
 
