@@ -157,4 +157,11 @@ print(f"En el día: {dia}, se recogieron: {toneladas_vidrio} toneladas de vidrio
 
 En el ejemplo anterior, se crean objetos de diferentes clases para representar los puntos geográficos, personas, camiones, cargas, rutas, recolecciones y la ciudad de recolección de residuos. Luego, se utiliza el método `calcular_toneladas_vidrio_en_dia()` para calcular la cantidad de toneladas de vidrio recogidas en un día específico. El resultado se imprime en la consola.
 
+## Prueba Unitaria
+En el código define una clase `TestTrashCity` que hereda de `unittest.TestCase` y contiene métodos de prueba para verificar la funcionalidad del método `calcular_toneladas_vidrio_en_dia`. En el método `setUp`, se configuran los objetos necesarios para las pruebas.
+
+El método `test_calcular_toneladas_vidrio_en_dia` prueba si la cantidad de toneladas de vidrio calculada es igual al valor esperado. Puedes agregar más pruebas unitarias para otras funcionalidades si lo deseas.
+
+Al ejecutar el código, se ejecutarán las pruebas unitarias y se mostrarán los resultados.
+
 Esto concluye la descripción y uso de la aplicación TrashCity
