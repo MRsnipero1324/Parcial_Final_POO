@@ -4,6 +4,9 @@ Programación Orientada a Objetos – 2023-10 Departamento de Ingeniería de Sis
 
 TrashCity es una aplicación de gestión de recolección de residuos que permite realizar un seguimiento de las recolecciones de diferentes tipos de materiales en distintas rutas. Permite calcular la cantidad de toneladas de vidrio recogidas en un día específico.
 
+#¿Como funciona?
+Es importante tener en cuenta que el código está hecho para que funcione en Google Colab, por lo que, si se desea usar otros IDE como Visual Studio Code, se deben instalar las respectivas extensiones para su correcto funcionamiento.
+
 ## Clases
 
 ### PuntoGeografico
