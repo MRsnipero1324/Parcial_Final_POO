@@ -120,31 +120,31 @@ El uso del `TrashCityBuilder` simplifica y estructura el proceso de construcció
 La aplicación TrashCity se utiliza para gestionar y realizar el seguimiento de las recolecciones de residuos en una ciudad. Permite calcular la cantidad de toneladas de vidrio recogidas en un día específico. A continuación se muestra un ejemplo de cómo utilizar la aplicación:
 
 ```python
-# Importar las clases necesarias
+
 from datetime import datetime
 from trashcity import PuntoGeografico, Persona, Camion, Carga, Ruta, Recoleccion, TrashCity
 
-# Crear objetos de PuntoGeografico
+
 punto1 = PuntoGeografico(10.123456, -75.456789)
 punto2 = PuntoGeografico(10.234567, -75.567890)
 punto3 = PuntoGeografico(10.345678, -75.678901)
 
-# Crear objeto de Ruta
+
 ruta1 = Ruta(1, "Ruta 1", [punto1, punto2, punto3])
 
-# Crear objeto de Persona
+
 persona1 = Persona(1, "Juan", "Guzman", "1193548728")
 
-# Crear objeto de Camion
+
 camion1 = Camion(1, persona1, 2)
 
-# Crear objeto de Carga
+
 carga1 = Carga(2.5, 1.5, 3.0, 1.0, 2.0)
 
-# Crear objeto de Recoleccion
+
 recoleccion1 = Recoleccion(1, datetime(2023, 4, 1, 8, 0), datetime(2023, 4, 1, 12, 0), ruta1, camion1, 2, [punto1, punto2], carga1)
 
-# Crear objeto de TrashCity
+
 trashcity = TrashCity([recoleccion1])
 
 # Calcular la cantidad de toneladas de vidrio recogidas en un día específico
